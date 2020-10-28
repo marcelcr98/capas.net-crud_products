@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class Producto
+    public class Producto
     {
+  
+            public int IdProducto { get; set; }
+
+            public string NombreProducto { get; set; }
+
+            public int IdProveedor { get; set; }
+            public int IdCategoria { get; set; }
+
+            public int CantidadPorUnidad { get; set; }
+
+            public int PrecioUnidad { get; set; }
+
+            public int UnidadesEnExistencia { get; set; }
+
+            public int UnidadesEnPedido { get; set; }
+
+            public int NivelNuevoPedido { get; set; }
+
+            public int Suspendido { get; set; }
+
+            public string CategoriaProducto { get; set; }
+        
     }
 }
