@@ -19,7 +19,7 @@ namespace Business
             try
             {
                 DProducto = new DProducto();
-                productos = DProducto.Listar(new Producto { IdCategoria = IdProducto });
+                productos = DProducto.Listar(new Producto { IdProducto = IdProducto });
 
             }
 

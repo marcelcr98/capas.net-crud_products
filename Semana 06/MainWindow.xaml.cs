@@ -29,11 +29,11 @@ namespace Semana_06
 
         public void Cargar()
         {
-            BCategoria BCategoria = null;
+            BProducto BProducto = null;
             try
             {
-                BCategoria = new BCategoria();
-                dgvCategoria.ItemsSource = BCategoria.Listar(0);
+                BProducto = new BProducto();
+                dgvProducto.ItemsSource = BProducto.Listar(0);
 
             }
             catch (Exception)
@@ -42,14 +42,14 @@ namespace Semana_06
             }
             finally
             {
-                BCategoria = null;
+                BProducto= null;
             }
         }
 
         private void BtnNuevo_Click(object sender, RoutedEventArgs e)
         {
-            ManCategoria manCategoria = new ManCategoria(0);
-            manCategoria.ShowDialog();
+            ManProducto manProducto = new ManProducto(0);
+            manProducto.ShowDialog();
             Cargar();
         }
 
@@ -59,15 +59,15 @@ namespace Semana_06
 
         }
 
-        private void DgvCategoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DgvProducto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            int idCategoria;
-            var item = (Categoria)dgvCategoria.SelectedItem;
+            int idProducto;
+            var item = (Producto)dgvProducto.SelectedItem;
             if (item == null) return;
-            idCategoria = Convert.ToInt32(item.IdCategoria);
-            ManCategoria manCategoria = new ManCategoria(idCategoria);
-            manCategoria.ShowDialog();
+            idProducto = Convert.ToInt32(item.IdProducto);
+            ManProducto manProducto = new ManProducto(idProducto);
+            manProducto.ShowDialog();
             Cargar();
 
         }

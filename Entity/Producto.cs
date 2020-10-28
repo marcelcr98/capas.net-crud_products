@@ -16,7 +16,7 @@ namespace Entity
             public int IdProveedor { get; set; }
             public int IdCategoria { get; set; }
 
-            public int CantidadPorUnidad { get; set; }
+            public string CantidadPorUnidad { get; set; }
 
             public int PrecioUnidad { get; set; }
 

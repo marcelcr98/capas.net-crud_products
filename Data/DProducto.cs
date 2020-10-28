@@ -38,7 +38,7 @@ namespace Data
                             NombreProducto= reader["nombreProducto"] != null ? Convert.ToString(reader["nombreProducto"]) : string.Empty,
                             IdProveedor = reader["IdProveedor"] != null ? Convert.ToInt32(reader["IdProveedor"]) : 0,
                             IdCategoria = reader["IdCategoria"] != null ? Convert.ToInt32(reader["IdCategoria"]) : 0,
-                            CantidadPorUnidad = reader["cantidadPorUnidad"] != null ? Convert.ToInt32(reader["cantidadPorUnidad"]) : 0,
+                            CantidadPorUnidad = reader["cantidadPorUnidad"] != null ? Convert.ToString(reader["cantidadPorUnidad"]) : string.Empty,
                             PrecioUnidad = reader["precioUnidad"] != null ? Convert.ToInt32(reader["precioUnidad"]) :0,
                             UnidadesEnExistencia = reader["unidadesEnExistencia"] != null ? Convert.ToInt32(reader["unidadesEnExistencia"]) : 0,
                             UnidadesEnPedido = reader["unidadesEnPedido"] != null ? Convert.ToInt32(reader["unidadesEnPedido"]) : 0,
@@ -75,7 +75,7 @@ namespace Data
                 parameters[2].Value = producto.IdCategoria;
                 parameters[3] = new SqlParameter("@cantidadPorUnidad", SqlDbType.Int);
                 parameters[3].Value = producto.CantidadPorUnidad;
-                parameters[4] = new SqlParameter("@precioUnidad", SqlDbType.Int);
+                parameters[4] = new SqlParameter("@precioUnidad", SqlDbType.VarChar);
                 parameters[4].Value = producto.PrecioUnidad;
                 parameters[5] = new SqlParameter("@unidadesEnExitencia", SqlDbType.Int);
                 parameters[5].Value = producto.UnidadesEnExistencia;
@@ -113,7 +113,7 @@ namespace Data
                 parameters[1].Value = producto.IdProveedor;
                 parameters[2] = new SqlParameter("@idCategoria", SqlDbType.Int);
                 parameters[2].Value = producto.IdCategoria;
-                parameters[3] = new SqlParameter("@cantidadPorUnidad", SqlDbType.Int);
+                parameters[3] = new SqlParameter("@cantidadPorUnidad", SqlDbType.VarChar);
                 parameters[3].Value = producto.CantidadPorUnidad;
                 parameters[4] = new SqlParameter("@precioUnidad", SqlDbType.Int);
                 parameters[4].Value = producto.PrecioUnidad;
